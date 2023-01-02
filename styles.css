@@ -62,9 +62,14 @@ h4{
     text-transform: uppercase;
 }
 
+#balance{
+    margin: 0;
+}
+
 .inc-exp-container{
     background-color: white;
     box-shadow: var(--box-shadow);
+    max-width: 380px;
 }
 
 .inc-exp-container > div {
