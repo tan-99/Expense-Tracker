@@ -1,8 +1,9 @@
 :root {
     --primary: white;
     --primary-dark: #faf9f9;
-    --green: green;
-    --red: red;
+    --primary-dark2: #bbb;
+    --green: rgb(24, 154, 97);
+    --red: rgb(219, 61, 61);
     --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -69,13 +70,33 @@ h4{
 .inc-exp-container{
     background-color: white;
     box-shadow: var(--box-shadow);
-    max-width: 380px;
 }
 
 .inc-exp-container > div {
     flex: 1 1 50%;
+    text-align: center;
 }
 
 .inc-exp-container > div:first-of-type{
     border-right: 2px solid #dedede;
+}
+
+.earn-amt{
+    color: var(--green);
+}
+
+.exp-amt{
+    color: var(--red);
+}
+
+label{
+    display: inline-block;
+}
+
+/*
+    input css will be applied to the text and number types.
+*/
+
+input[type="text"],input[type="number"]{
+    border: 1px solid var(--primary-dark2);
 }
