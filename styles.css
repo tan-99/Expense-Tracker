@@ -21,10 +21,11 @@ body {
 }
 
 .main-box{
-    max-width: 400px;
+    max-width: 470px;
     min-height: 600px;
     border: 1px solid black;
     background-color: var(--primary-dark);
+    
 }
 
 /*.title{
@@ -147,4 +148,15 @@ input[type="text"],input[type="number"]{
     background-color: var(--dark-red);
     color: white;
     border-radius: 3px;
+    line-height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-135%,-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hist-list li:hover .delete-btn{
+    opacity: 1;
 }
