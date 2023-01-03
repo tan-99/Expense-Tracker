@@ -2,6 +2,7 @@
     --primary: white;
     --primary-dark: #faf9f9;
     --primary-dark2: #bbb;
+    --font-main: #555252;
     --green: rgb(24, 154, 97);
     --red: rgb(219, 61, 61);
     --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -11,10 +12,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    
 }
 
 body {
@@ -115,3 +112,21 @@ input[type="text"],input[type="number"]{
     height: 2.5rem;
     box-shadow: var(--box-shadow);
 }
+
+.transac-btn:focus,.delete-btn:focus{
+    outline: 0;
+}
+
+.hist-list{
+    list-style-type: none;
+    padding: 0;
+}
+
+.hist-list li{
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    color: var(--font-main);
+    display: flex;
+    justify-content: space-between;
+}
+
