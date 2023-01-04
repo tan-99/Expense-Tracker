@@ -3,7 +3,7 @@ const balance = document.getElementById('balance');
 const incAmt = document.getElementById('inc-amt');
 const expAmt = document.getElementById('exp-amt');
 
-const list = document.getElementById('list');
+const histList = document.getElementById('list');
 
 
 const addTransactionsButton = document.getElementById('transac-btn');
@@ -25,15 +25,16 @@ addTransactionsButton.addEventListener('click', function(){
     const item = document.createElement("li");
 
     item.classList.add(
-        amount < 0 ? "minus" : "plus";
+        amount < 0 ? ["minus", "ml-n1", "p-2", "mb-2"] : "plus"
     );
 
     item.innerHTML = `
-        ${transaction.text}<span>${sign}${Math.abs(amount)}</span>
+        ${transDetails}<span>${sign}${Math.abs(amount)}</span>
+        <button class="delete-btn" style = "font-size:17px; width: 25px; ">
+                            <i class="fa fa-close"></i>
+                        </button>`;
 
-        `;
-
-    hist-list.appendChild(item);
+    histList.appendChild(item);
 
     
 });
