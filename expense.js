@@ -14,27 +14,31 @@ const addTransactionsButton = document.getElementById('transac-btn');
 
 });*/
 
+const transDetails = document.getElementById('transac-details');
+const amount = document.getElementById('amount');
+
 
 addTransactionsButton.addEventListener('click', function(){
 
-    const transDetails = document.getElementById('transac-details').value;
-    const amount = document.getElementById('amount').value;
     
-    const sign = amount < 0 ? "-" : "+";
+    const sign = amount.value < 0 ? "-" : "+";
 
     const item = document.createElement("li");
 
     item.classList.add(
-        amount < 0 ? ["minus", "ml-n1", "p-2", "mb-2"] : "plus"
+        (amount.value > 0) ? "plus" : "minus"
     );
 
     item.innerHTML = `
-        ${transDetails}<span>${sign}${Math.abs(amount)}</span>
+        ${transDetails.value}<span>${sign}$${Math.abs(amount.value)}</span>
         <button class="delete-btn" style = "font-size:17px; width: 25px; ">
                             <i class="fa fa-close"></i>
                         </button>`;
 
     histList.appendChild(item);
+
+    transDetails.value = "";
+    amount.value = "";
 
     
 });
