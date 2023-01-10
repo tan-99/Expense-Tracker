@@ -1,7 +1,8 @@
 var balance = document.getElementById('balance');
 
-const incAmt = document.getElementById('inc-amt');
-const expAmt = document.getElementById('exp-amt');
+var earnAmt = document.getElementById('earn-amt');
+
+var expAmt = document.getElementById('exp-amt');
 
 const histList = document.getElementById('list');
 
@@ -16,7 +17,9 @@ const addTransactionsButton = document.getElementById('transac-btn');
 
 const transDetails = document.getElementById('transac-details');
 const amount = document.getElementById('amount');
-var str = balance.innerText;
+var strBal = balance.innerText;
+var strEarn = earnAmt.innerText;
+var strExp = expAmt.innerText;
 
 addTransactionsButton.addEventListener('click', function(){
 
@@ -46,11 +49,33 @@ addTransactionsButton.addEventListener('click', function(){
 
         //updation of balance
         
-        str = str.replace('$','');
-        str = (Number(str) + Number(amount.value));
-        str = str.toString();
+        strBal = strBal.replace('$','');
+        strBal = (Number(strBal) + Number(amount.value));
+        strBal = strBal.toString();
 
-        balance.innerHTML = `<p class = "fs-1 fw-bold" id = "balance">$${str}</p>`;
+        balance.innerHTML = `<p class = "fs-1 fw-bold" id = "balance">$${strBal}</p>`;
+
+        //updation
+        
+        if(amount.value > 0){
+
+            strEarn = strEarn.replace('+$','');
+            strEarn = (Number(strEarn) + Number(amount.value));
+            strEarn = strEarn.toString();
+
+            earnAmt.innerHTML = `<h4 id = "earn-amt" class = "earn-amt text-center fw-bold">+$${strEarn}</h4>`;
+        }
+        else{
+
+            strExp = strExp.replace('-$','');
+            strExp = (Number(strExp) + Math.abs(Number(amount.value)));
+            strExp = strExp.toString();
+
+            expAmt.innerHTML = `<h4 id = "exp-amt" class = "exp-amt text-center fw-bold">-$${strExp}</h4>`;
+
+        }
+
+
 
         //updation of history
 
