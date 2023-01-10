@@ -1,4 +1,4 @@
-const balance = document.getElementById('balance');
+var balance = document.getElementById('balance');
 
 const incAmt = document.getElementById('inc-amt');
 const expAmt = document.getElementById('exp-amt');
@@ -16,29 +16,61 @@ const addTransactionsButton = document.getElementById('transac-btn');
 
 const transDetails = document.getElementById('transac-details');
 const amount = document.getElementById('amount');
-
+var str = balance.innerText;
 
 addTransactionsButton.addEventListener('click', function(){
 
+    //if only amount has been entered
+
+    if(amount.value != "" && transDetails.value == ""){
+        alert("Enter transaction details!");
+    }
     
-    const sign = amount.value < 0 ? "-" : "+";
+    //if only transaction-details have been entered
 
-    const item = document.createElement("li");
+    else if(amount.value=="" && transDetails.value != ""){
+        alert("Enter amount!");
+    }
 
-    item.classList.add(
-        (amount.value > 0) ? "plus" : "minus"
-    );
+    //if both - transaction-details and amount is entered
 
-    item.innerHTML = `
-        ${transDetails.value}<span>${sign}$${Math.abs(amount.value)}</span>
-        <button class="delete-btn" style = "font-size:17px; width: 25px; ">
-                            <i class="fa fa-close"></i>
-                        </button>`;
+    else if(amount.value != "" && transDetails.value != ""){
 
-    histList.appendChild(item);
+        const sign = amount.value < 0 ? "-" : "+";
 
-    transDetails.value = "";
-    amount.value = "";
+        const item = document.createElement("li");
+
+        item.classList.add(
+            (amount.value > 0) ? "plus" : "minus"
+        );
+
+        //updation of balance
+        
+        str = str.replace('$','');
+        str = (Number(str) + Number(amount.value));
+        str = str.toString();
+
+        balance.innerHTML = `<p class = "fs-1 fw-bold" id = "balance">$${str}</p>`;
+
+        //updation of history
+
+        item.innerHTML = `
+            ${transDetails.value}<span>${sign}${Math.abs(amount.value)}</span>
+            <button class="delete-btn" style = "font-size:17px; width: 25px; ">
+                                <i class="fa fa-close"></i>
+                            </button>`;
+
+        histList.appendChild(item);
+
+        transDetails.value = "";
+        amount.value = "";
+    }
+
+    //No input fields are  filled
+
+    else{
+        alert('Fill in the required details!');
+    }
 
     
 });
