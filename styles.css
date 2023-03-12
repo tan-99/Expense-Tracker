@@ -21,7 +21,7 @@ body {
 }
 
 .main-box{
-    max-width: 470px;
+    max-width: 480px;
     min-height: 600px;
     border: 1px solid black;
     background-color: var(--primary-dark);
@@ -108,11 +108,26 @@ input[type="text"],input[type="number"]{
 .transac-btn{
     background-color: #9c88ff;
     color: white;
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     border: none;
-    width: 100%;
+    width: 45%;
     height: 2.5rem;
     box-shadow: var(--box-shadow);
+}
+
+#transac-earning-btn{
+    background-color: var(--green);
+}
+
+#transac-expense-btn{
+    background-color: var(--red);
+}
+
+.btn-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 10px;
 }
 
 .transac-btn:focus,.delete-btn:focus{
@@ -154,7 +169,7 @@ input[type="text"],input[type="number"]{
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(-135%,-50%);
+    transform: translate(-100%,-50%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }

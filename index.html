@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <div class="main-box container-fluid px-5 py-2">
+    <div class="main-box container-fluid px-4 py-2">
 
         <div class="title row mb-2">
             <h1 class = "text-center fw-bolder">Expense Tracker</h1>
@@ -23,7 +23,7 @@
 
         <div class="balance row pt-4 pb-2 mb-3">
             <h4 style="letter-spacing: 0.5px;" class="fw-bold">YOUR BALANCE</h4>
-            <p class = "fs-1 fw-bold" id = "balance">$0.00</p>
+            <p class = "fs-1 fw-bold" id = "balance">$0</p>
         </div>
 
         <div class="tab-inc-exp row px-4 mb-4">
@@ -33,14 +33,14 @@
                 <div class = "earning-tab">
 
                     <h4 class="text-center fw-bold fs-5">Earning</h4>
-                    <h4 id = "earn-amt" class = "earn-amt text-center fw-bold">+$0.00</h4>
+                    <h4 id = "earn-amt" class = "earn-amt text-center fw-bold">+$0</h4>
 
                 </div>
 
                 <div class="expense-tab">
 
                     <h4 class = "text-center fw-bold fs-5">Expense</h4>
-                    <h4 id = "exp-amt" class = "exp-amt text-center fw-bold">-$0.00</h4>
+                    <h4 id = "exp-amt" class = "exp-amt text-center fw-bold">-$0</h4>
 
                 </div>
             </div>
@@ -67,15 +67,17 @@
 
                 <div id ="form-control" class="mb-2">
                     <label for="amount" class="my-2">
-                        Amount<br>
-                        (negative-expense, positive-income)    
+                        Amount  
                     </label>
                     <input type="number" id = "amount" placeholder = "Enter amount..">
                 </div>
 
                 <div class="btn-div text-center">
-                    <button type = "button" id ="transac-btn" class="transac-btn mt-4">
-                        Add transaction
+                    <button type = "button" id ="transac-earning-btn" class="transac-btn my-3">
+                        Add Earning
+                    </button>
+                    <button type = "button" id ="transac-expense-btn" class="transac-btn my-3">
+                        Add Expense
                     </button>
                 </div>
         
